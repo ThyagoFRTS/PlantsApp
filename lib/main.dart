@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Plant App',
       theme: ThemeData(
-          primarySwatch: const MaterialColor(kPrimaryColor, kMapColor),
+          primarySwatch: const MaterialColor(kPrimaryColorValue, kMapColor),
           scaffoldBackgroundColor: kBackgroundColor,
           textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor)),
       home: const HomeScreen(),
