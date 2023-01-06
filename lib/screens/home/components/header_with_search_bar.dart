@@ -14,7 +14,7 @@ class HeaderWithSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: kDefaultPadding * 2.5),
-      color: Colors.black,
+      //color: Colors.black,
       height: size.height * 0.2,
       child: Stack(
         children: <Widget>[
