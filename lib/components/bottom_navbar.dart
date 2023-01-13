@@ -10,11 +10,11 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 60,
       padding: const EdgeInsets.only(
-          left: kDefaultPadding * 2,
-          right: kDefaultPadding * 2,
-          bottom: kDefaultPadding),
+        left: kDefaultPadding * 2,
+        right: kDefaultPadding * 2,
+      ),
       decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
             offset: const Offset(0, -10),

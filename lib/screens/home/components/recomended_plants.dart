@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:plants_app/constants.dart';
+import 'package:plants_app/screens/details/details_screen.dart';
 
 class RecomendedPlants extends StatelessWidget {
   const RecomendedPlants({
@@ -16,21 +17,37 @@ class RecomendedPlants extends StatelessWidget {
             image: "assets/images/image_1.png",
             title: "Samantha",
             country: "Russia",
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              );
+            },
             price: 440,
           ),
           RecomendedPlantCard(
             image: "assets/images/image_2.png",
             title: "Angelica",
             country: "Russia",
-            onPress: () {},
+            onPress: () {
+              print("test");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              );
+            },
             price: 440,
           ),
           RecomendedPlantCard(
-            image: "assets/images/image_2.png",
+            image: "assets/images/image_3.png",
             title: "Samantha",
             country: "Russia",
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              );
+            },
             price: 440,
           ),
         ],
@@ -51,7 +68,7 @@ class RecomendedPlantCard extends StatelessWidget {
 
   final String image, title, country;
   final int price;
-  final Function onPress;
+  final VoidCallback? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -63,14 +80,12 @@ class RecomendedPlantCard extends StatelessWidget {
           top: kDefaultPadding / 2,
           bottom: kDefaultPadding * 2.5),
       width: size.width * 0.4,
-      child: Column(
-        children: <Widget>[
-          Image.asset(image),
-          GestureDetector(
-            onTap: () {
-              onPress();
-            },
-            child: Container(
+      child: GestureDetector(
+        onTap: onPress,
+        child: Column(
+          children: <Widget>[
+            Image.asset(image),
+            Container(
               padding: const EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -110,9 +125,9 @@ class RecomendedPlantCard extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
